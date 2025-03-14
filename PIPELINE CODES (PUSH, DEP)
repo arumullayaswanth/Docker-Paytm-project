@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/RAHAMSHAIK007/dockernewproject.git'
+                git 'https://github.com/arumullayaswanth/Docker-Paytm-project.git'
             }
         }
         stage('build') {
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('push') {
             steps {
-                sh 'docker login -u rahamshaik -p Raham@#123'
+                sh 'docker login -u yaswanth111 -p $password'
                 sh 'docker push $repo'
             }
         }
@@ -37,7 +37,7 @@ pipeline {
     stages {
         stage('check') {
             steps {
-                git 'https://github.com/RAHAMSHAIK007/dockernewproject.git'
+                git 'https://github.com/arumullayaswanth/Docker-Paytm-project.git'
             }
         }
         stage('stack') {
