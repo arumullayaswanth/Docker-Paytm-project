@@ -81,7 +81,7 @@ docker stack deploy -c docker-compose.yml paytm
 
 ## 📞 Contact & Support  
 
-📧 **Email**: your-email@example.com  
+ 
 🌐 **GitHub**: [arumullayaswanth](https://github.com/arumullayaswanth)  
 
 ---
