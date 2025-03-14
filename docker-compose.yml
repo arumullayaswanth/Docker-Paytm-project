@@ -2,8 +2,8 @@ version: '3.8'
 services:
   paytm:
     image: yaswanth111/paytm:latest
-    poarts:
-      -8 "81:80"
+    ports:
+      - "81:80"
     deploy:
       replicas: 3
   movies:
