@@ -23,16 +23,26 @@ DOCKE STACK	: Docker swarm + Docker compose
 yum install docker -y
 systemctl start docker
 systemctl status docker
-docker swarm init --advertise-addr 172.31.85.110
+docker swarm init --advertise-addr 172.31.85.110 (copy the token to paste all worked node)
 docker node ls
 
 
 2. INSTALLING JENKINS (MASTER)
 
+#STEP-1: INSTALLING GIT JAVA-1.8.0 MAVEN 
+yum install git java-1.8.0-openjdk maven -y
+
+#STEP-2: GETTING THE REPO (jenkins.io --> download -- > redhat)
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-amazon-linux-extras install java-openjdk11 -y 
-yum install git maven jenkins -y
+
+#STEP-3: DOWNLOAD JAVA11 AND JENKINS
+#amazon-linux-extras install java-openjdk11 -y
+sudo yum install java-17-amazon-corretto -y
+yum install jenkins -y
+update-alternatives --config java
+
+#STEP-4: RESTARTING JENKINS (when we download service it will on stopped state)
 systemctl start jenkins.service
 systemctl status jenkins.service
 
@@ -57,7 +67,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/RAHAMSHAIK007/dockernewproject.git'
+                git 'https://github.com/arumullayaswanth/Docker-Paytm-project.git   '
             }
         }
         stage('build') {
