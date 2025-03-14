@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytm Recharge</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+        header {
+            background-color: #002970;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(to right, #002970, #0078ff);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .cta-button {
+            background: #ff9800;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background: #e68900;
+        }
+
+        /* Recharge Section */
+        .recharge-container {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .recharge-container h2 {
+            color: #002970;
+        }
+        .recharge-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        input, select {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .recharge-button {
+            background: #0078ff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .recharge-button:hover {
+            background: #005ecb;
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+        .feature-box {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #002970;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Paytm Recharge</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recharge</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Recharge Your Mobile, DTH & More</h1>
+        <p>Fast, Secure, and Hassle-Free Payments</p>
+        <button class="cta-button">Start Recharge</button>
+    </section>
+
+    <!-- Recharge Section -->
+    <section class="recharge-container">
+        <h2>Recharge in Seconds</h2>
+        <form id="recharge-form">
+            <label for="number">Enter Mobile Number:</label>
+            <input type="tel" id="number" placeholder="Enter Mobile Number" required>
+
+            <label for="operator">Select Operator:</label>
+            <select id="operator">
+                <option value="airtel">Airtel</option>
+                <option value="vi">Vi</option>
+                <option value="jio">Jio</option>
+                <option value="bsnl">BSNL</option>
+            </select>
+
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" placeholder="Recharge Amount" required>
+
+            <button type="submit" class="recharge-button">Proceed to Pay</button>
+        </form>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>Instant Recharge</h3>
+            <p>Complete your recharge within seconds.</p>
+        </div>
+        <div class="feature-box">
+            <h3>100% Secure Payments</h3>
+            <p>Your transactions are protected with high security.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Exciting Offers</h3>
+            <p>Get amazing cashback & discounts on every recharge.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Paytm Recharge. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('recharge-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            let number = document.getElementById('number').value;
+            let operator = document.getElementById('operator').value;
+            let amount = document.getElementById('amount').value;
+
+            if (number.length !== 10 || isNaN(number)) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+            if (amount < 10) {
+                alert('Recharge amount must be at least ₹10.');
+                return;
+            }
+
+            alert(`Recharge Successful! Number: ${number}, Operator: ${operator}, Amount: ₹${amount}`);
+        });
+    </script>
+
+</body>
+</html>
