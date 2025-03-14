@@ -27,6 +27,6 @@ services:
   recharge:
     image: yaswanth111/paytmrecharge:latest
     ports:
-      - "85:80"
+      - "86:80"
     deploy:
       replicas: 3
