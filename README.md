@@ -35,6 +35,43 @@ git clone https://github.com/arumullayaswanth/Docker-Paytm-project.git
 cd Docker-Paytm-project
 ```
 
+
+
+# Step 1: Build your Docker image (from Dockerfile in current directory)
+docker build -t paytam .
+
+# Step 2: View the list of built images
+docker images
+
+# Step 3: Run the container to test it locally
+docker run -d -p 80:80 paytam
+
+# Step 4: Tag the image for Docker Hub (replace with your username)
+docker tag paytam yaswanth111/paytam:latest
+
+# Step 5: Login to Docker Hub
+docker login
+
+# Step 6: Push the image to Docker Hub
+docker push yaswanth111/paytam:latest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### **2⃣ Run Locally with Docker Compose**  
 ```bash
 docker-compose up -d
